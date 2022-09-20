@@ -1,0 +1,512 @@
+$primary-color: #2E0C59;
+$secondary-color: #FFFFFF;
+$third-color: #BC90E4;
+$four-color: #FDFFA6;
+
+
+.lgpoint {
+  background-color: #FDFFA6;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  filter: blur(20px);
+  z-index: -1;
+  position: absolute;
+  transition: 3s ease-out;
+
+}
+
+.mdpoint {
+  background-color: #FDFFA6;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  filter: blur(12px);
+  z-index: 0;
+  position: absolute;
+  transition: 3s ease-out;
+}
+
+.smpoint {
+  background-color: #FDFFA6;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  filter: blur(8px);
+  z-index: 0;
+  position: absolute;
+  transition: 3s ease-out;
+}
+
+.navbar {
+  background-color: #D7FFC5 !important;
+  color: #2E0C59;
+
+  .logonav {
+    position: absolute;
+    top: 20px;
+    transition: 3s ease-out;
+
+  }
+
+  .nav-item {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .cta-item {
+    text-align: end !important;
+    margin-right: 0px;
+  }
+
+  .btnnavbar {
+    background-color: #FDFFA6;
+    border: none;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    display: inline-block;
+    padding: 12px 18px;
+
+  }
+}
+
+#moon {
+  position: absolute;
+  top: -12px !important;
+  height: 180px !important;
+  background-repeat: no-repeat;
+  transition: 3s ease-out;
+}
+
+body {
+  background-color: #D7FFC5;
+  color: #2E0C59;
+  cursor: none;
+
+
+  h1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 37px;
+    line-height: 48px;
+  }
+
+  .h1-light {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 28px;
+    color: #BC90E4;
+  }
+}
+
+.cursor {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  filter: blur(8px);
+  z-index: 0;
+  position: absolute;
+  background: $third-color;
+  z-index: 3;
+}
+
+/*body::after {
+  content: '';
+  height: 2px;
+  position: fixed;
+  top: calc(50% - 1px);
+  left: 0;
+  right: 0;
+  background-color: red;
+  z-index: 10;
+}*/
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.header-home {
+  position: relative;
+  top: 100px;
+
+  /*  .lgpoint {
+      //top: 176%;
+      right: 40%;
+    }
+
+    .mdpoint {
+      right: 39%;
+      //top: 0%;
+    }
+
+    .smpoint {
+      right: 3%;
+      //top: 12%;
+    }*/
+}
+
+.cardpicture {
+
+  background: rgba(165, 54, 254, 0.55);
+  border-radius: 10px 10px 10px 240.5px;
+  height: 669px;
+
+  .picturehome {
+    border-radius: 233.5px;
+    overflow: hidden;
+    width: 467px;
+    height: 582px;
+    object-fit: cover;
+    position: relative;
+    left: -13px;
+    top: 38px;
+  }
+}
+
+
+.btncontact {
+  background-color: #FDFFA6;
+  border: none;
+  box-shadow: -9px 9px 16px 1px rgba(253, 255, 166, 0.68);
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  display: inline-block;
+  padding: 12px 18px;
+
+  &:hover {
+    background-color: $third-color;
+    color: black;
+  }
+
+  &:focus {
+    background-color: $primary-color;
+    color: white;
+  }
+
+  &:disabled {
+    background: #F9F9F9;
+    color: #C4C4C4 !important;
+  }
+
+}
+
+.history {
+  top: 185px;
+  position: relative;
+
+  .lgpoint {
+    right: 22%;
+    top: 86%;
+  }
+
+  .smpoint {
+    right: 8%;
+    top: 4%;
+  }
+
+
+  .historyline::after {
+    content: '';
+    height: 3px;
+    position: absolute;
+    top: 121px;
+    left: 10%;
+    right: 10%;
+    background-color: rgba(63, 36, 100, 0.29);
+    transform: rotate(-0.06deg);
+    z-index: -1;
+  }
+
+  .keydate {
+    top: 23px;
+    color: $third-color;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    position: relative;
+  }
+
+  .selectedpoint {
+    position: absolute;
+    left: 225px;
+    top: -16px;
+    z-index: 1;
+  }
+
+  .historypoint {
+    position: relative;
+    left: 18%;
+  }
+
+  .historypoint2 {
+    position: relative;
+    left: 28%;
+  }
+
+  .historypoint3 {
+    position: relative;
+    left: 38%;
+  }
+
+  .historypoint4 {
+    position: relative;
+    left: 48%;
+  }
+
+  .historypoint5 {
+    position: relative;
+    left: 58%;
+  }
+
+  .historypoint6 {
+    position: relative;
+    left: 68%;
+  }
+
+
+  .card {
+    background-color: #D7FFC5;
+  }
+
+  .historycard {
+    background-color: $primary-color;
+    color: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: -14px 16px 34px 1px rgba(46, 12, 89, 0.68);
+
+
+    h2 {
+      color: $third-color;
+    }
+
+    .text-yellow {
+      color: $four-color;
+    }
+
+    .detailpicture {
+      border-radius: 10px;
+      max-width: 379px;
+      min-height: 399px;
+      max-height: 399px;
+      object-fit: cover;
+    }
+  }
+
+  .logo {
+    width: 98px;
+    position: relative;
+    top: -15px;
+  }
+
+  .testcard {
+
+
+    .spacecard {
+      margin-right: 20px;
+    }
+
+    .slide {
+      margin-left: 13px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+    .blocHorizontal {
+      display: flex;
+      flex-direction: row;
+      transform: rotate(90deg) translateY(-100vh);
+      transform-origin: top left;
+
+
+    }
+
+    .container {
+      transform: rotate(-90deg) translateX(-100vh);
+      transform-origin: top left;
+      overflow-x: hidden;
+      min-width: 100vh;
+      height: 100vw;
+      margin-top: 100px !important;
+      margin-bottom: -455px;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+.skills {
+  //top: -470px;
+  position: relative;
+
+  h2 {
+    color: $third-color;
+  }
+
+  .lgpoint {
+    right: 4%;
+    top: 116%;
+  }
+
+  .smpoint {
+    right: 52%;
+    top: 105%;
+    z-index: -1 !important;
+  }
+
+  .webskill {
+    padding: 30px;
+    background-color: $four-color;
+    box-shadow: -14px 16px 34px 1px rgba(253, 255, 166, 0.68);
+    color: $primary-color;
+    border-radius: 10px;
+
+    .logoweb {
+      margin-top: 20px;
+      align-items: center;
+
+      .logo {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+        min-height: 100%;
+      }
+    }
+  }
+
+  .theoryskill {
+    padding: 30px;
+    background-color: #d9d9d9;
+    box-shadow: 30px -30px 28px -7px rgba(217, 217, 217, 0.66);
+    color: $primary-color;
+    border-radius: 10px;
+
+    ul li {
+      background-color: #d9d9d9;
+    }
+  }
+
+  .softskill {
+    padding: 30px;
+    background-color: $primary-color;
+    box-shadow: 20px 16px 34px 1px rgba(46, 12, 89, 0.68);
+    color: #d9d9d9;
+    border-radius: 10px;
+
+    .list-group-item {
+      color: white;
+    }
+
+    ul li {
+      background-color: $primary-color;
+      color: white;
+    }
+  }
+}
+
+.project {
+  //top: -230px;
+  position: relative;
+
+  .container {
+          position: relative;
+
+    .contenu {
+      position: relative;
+      opacity: 0;
+      animation: all 0.3s ease;
+    }
+
+    .activeContenu{
+      animation: fade 0.5s forwards;
+    }
+    @keyframes fade {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
+
+  .projectcard {
+    background-color: #d9d9d9;
+    box-shadow: -30px 29px 28px -7px rgba(217, 217, 217, 0.66);
+    color: $third-color;
+    border-radius: 20px;
+    text-align: center;
+    padding: 45px;
+  }
+
+
+  .searchproject {
+    margin-left: auto;
+    margin-right: auto;
+
+    .uniproject {
+      background-color: #2E0C59;
+      border: solid 3px white;
+      border-radius: 30px 0px 0px 30px;
+      padding: 9px;
+    }
+
+    .internproject {
+      background-color: $primary-color;
+      border: solid 3px white;
+      padding: 9px;
+      border-right: none !important;
+      border-left: none !important;
+    }
+
+    .alternanceproject {
+      background-color: $primary-color;
+      border: solid 3px white;
+      border-radius: 0px 30px 30px 0px;
+      padding: 9px;
+
+    }
+
+    .selectedproject {
+      background-color: $four-color !important;
+    }
+
+
+  }
+}
+
+.contact {
+
+  position: relative;
+  background-color: $primary-color;
+  color: $four-color;
+
+  .pictocontact {
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: center;
+  }
+}
+
+
+.paintproject {
+  position: relative;
+  /* right: 19%; */
+  /* left: -48%; */
+  /* margin-right: 81px; */
+  /* padding-left: 0%; */
+  top: 93%;
+  left: -53%;
+  margin-right: 160px;
+  /* height: 30%; */
+  /* z-index: 10 !important;*/
+}
+
+
+

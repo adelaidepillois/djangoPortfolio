@@ -1,0 +1,173 @@
+{% extends 'administration/layout.html' %}
+{% load static %}
+
+{% block title %} Demandes de nous rejoindre {% endblock %}
+{% block content %}
+    <div class="post d-flex flex-column-fluid" id="kt_post">
+        <!--begin::Container-->
+        <div id="kt_content_container" class="container-xxl">
+            <form method="get">
+                <!--begin::Card-->
+                <div class="card mb-7">
+                    <!--begin::Card body-->
+                    <div class="card-body">
+                        <!--begin::Compact form-->
+                        <div class="d-flex align-items-center">
+                            <!--begin::Input group-->
+                            <div class="position-relative w-md-400px me-md-2">
+                                <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
+                                <select class="form-control" name="region">
+
+                                    <option value="">Choix de la région</option>
+                                    {% for region in regions %}
+                                        {{ request.GET.region }}  : {{ region.pk }}
+                                        <option value="{{ region.pk }}" {% if request.GET.region ==  region.pk|stringformat:"i" %}selected{% endif %}>{{ region.title }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="position-relative w-md-400px me-md-2">
+                                <select class="form-control" name="district">
+                                    <option value="">Choix du département</option>
+                                    {% for district in districts %}
+                                        <option value="{{ district.pk }}" {% if request.GET.district ==  district.pk|stringformat:"i" %}selected{% endif %}>{{ district.title }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="position-relative w-md-400px me-md-2">
+                                <input class="form-control" name="city" placeholder="Ville" value="{{ request.GET.city }}"/>
+                            </div>
+                            <div class="position-relative w-md-400px me-md-2">
+                                <select class="form-control" name="availability">
+                                    <option value="">Choix de la disponibilité</option>
+                                    {% for key, availability in availabilities %}
+                                         <option value="{{ key }}" {% if request.GET.availability ==  key %}selected{% endif %}>{{ availability }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="position-relative w-md-400px me-md-2">
+                                <input type="date" class="form-control" name="date_created" placeholder="Date de demande" value="{{ request.GET.date_created }}"/>
+                            </div>
+                            <div class="position-relative w-md-400px me-md-2">
+                                <select class="form-control" name="status">
+                                    <option value="">Status</option>
+                                    {% for key, statu in status %}
+                                         <option value="{{ key }}" {% if request.GET.status ==  key %}selected{% endif %}>{{ statu }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <button type="submit" class="btn btn-primary me-5">Rechercher</button>
+                                <a href="{% url 'administration:joinus' %}" class="btn btn-secondary me-5 text-white">Reset</a>
+                            </div>
+                            <!--end:Action-->
+                        </div>
+                        <!--end::Compact form-->
+                    </div>
+                    <!--end::Card body-->
+                </div>
+                <!--end::Card-->
+            </form>
+            <!--begin::Card-->
+            <div class="card">
+                <!--begin::Card body-->
+                <div class="card-body pt-0">
+                    <!--begin::Table-->
+                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_subscriptions_table">
+                        <thead>
+                        <tr class="text-start text-muted fw-bolder fs-7 text-uppercase gs-0">
+                            <th class="min-w-125px">Identité</th>
+                            <th class="min-w-125px">Type</th>
+                            <th class="min-w-125px">Disponibilité</th>
+                            <th class="min-w-125px">Date de la demande</th>
+                            <th class="min-w-125px">Lieu</th>
+                            <th class="min-w-125px">Status</th>
+                            <th class="text-end min-w-70px">Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody class="text-gray-600 fw-bold">
+                        {% for contact in joinus_list %}
+                            <tr>
+                                <td>
+                                    <a href="" class="text-gray-800 text-hover-primary mb-1">
+                                        {{ contact.firstname }} {{ contact.lastname }}<br/>
+                                    </a>
+                                     {{ contact.email }}
+                                </td>
+                                <td>
+                                    {{ contact.get_category_display }}
+                                </td>
+                                <td>
+                                    {{ contact.get_availability_display }}
+                                </td>
+                                <td>
+                                    {{ contact.date_created|date:"d/m/Y" }}
+                                </td>
+                                <td>
+                                    {% if contact.agency %}
+                                        Agence de {{ contact.agency.title }}
+                                    {% else %}
+                                        {{ contact.joboffer.city }}<br/>{{ contact.joboffer.district.title }} - {{ contact.joboffer.district.region.title }}
+                                    {% endif %}
+
+                                </td>
+                                <td>
+                                    {{ contact.status.first.get_label_display }}
+                                </td>
+                                <td class="text-end">
+                                    <a href="#" class="btn btn-light btn-active-light-primary btn-sm"
+                                       data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
+                                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr072.svg-->
+                                        <span class="svg-icon svg-icon-5 m-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                 height="24" viewBox="0 0 24 24" fill="none">
+                                                <path d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z"
+                                                      fill="currentColor"/>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                    <!--begin::Menu-->
+                                    <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4"
+                                         data-kt-menu="true">
+                                        <!--begin::Menu item-->
+                                        <div class="menu-item px-3">
+                                            <a href="{% url 'administration:joinus_detail' contact.pk %}"
+                                               class="menu-link px-3">Détail</a>
+                                        </div>
+                                        <!--end::Menu item-->
+                                        <!--begin::Menu item-->
+                                        <!--end::Menu item-->
+                                    </div>
+                                    <!--end::Menu-->
+                                </td>
+                                <!--end::Action=-->
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                        <!--end::Table body-->
+                    </table>
+                    <div class="pagination">
+                <span class="step-links">
+                    {% if page_obj.has_previous %}
+                        <a href="?page=1">&laquo; first</a>
+                        <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                    {% endif %}
+
+                    <span class="current">
+                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                    </span>
+
+                    {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}">next</a>
+                        <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                    {% endif %}
+                </span>
+                </div>
+                    <!--end::Table-->
+                </div>
+                <!--end::Card body-->
+            </div>
+            <!--end::Card-->
+        </div>
+        <!--end::Container-->
+    </div>
+{% endblock %}
