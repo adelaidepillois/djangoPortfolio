@@ -259,10 +259,26 @@ body {
       margin-top: 20px;
       align-items: center; }
       .skills .webskill .logoweb .logo {
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 100%;
-        min-height: 100%; }
+        margin-left: 10px;
+        -webkit-transition: all 1s ease;
+        /* Safari et Chrome */
+        -moz-transition: all 1s ease;
+        /* Firefox */
+        -ms-transition: all 1s ease;
+        /* Internet Explorer 9 */
+        -o-transition: all 1s ease;
+        /* Opera */
+        transition: all 1s ease; }
+      .skills .webskill .logoweb :hover {
+        -webkit-transform: scale(1.25);
+        /* Safari et Chrome */
+        -moz-transform: scale(1.25);
+        /* Firefox */
+        -ms-transform: scale(1.25);
+        /* Internet Explorer 9 */
+        -o-transform: scale(1.25);
+        /* Opera */
+        transform: scale(1.25); }
   .skills .theoryskill {
     padding: 30px;
     background-color: #d9d9d9;
@@ -288,8 +304,8 @@ body {
   .project .detailpicture {
     border-radius: 10px;
     max-width: 379px;
-    min-height: 399px;
-    max-height: 399px;
+    /* min-height: 399px; */
+    max-height: 238px;
     object-fit: cover; }
   .project .container {
     background-color: #d9d9d9;
@@ -298,7 +314,7 @@ body {
     border-radius: 20px;
     text-align: center;
     padding: 45px;
-    height: 673px; }
+    height: 615px; }
     .project .container .contenu {
       opacity: 0;
       animation: all 0.3s ease; }
@@ -369,8 +385,7 @@ body {
   border-radius: 10px;
   max-width: 339px;
   min-height: 399px;
-  max-height: 399px;
-  margin: 95px; }
+  max-height: 399px; }
 
 .contact {
   position: relative;

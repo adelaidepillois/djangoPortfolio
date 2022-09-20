@@ -103,7 +103,7 @@
                         <div class="row logoweb">
                             {% for skill in skill %}
                                 {% if skill.category == 'IN' %}
-                                    <div class="col-3">
+                                    <div class="col-2">
                                         <img class="w-50 logo" src="{{ skill.logo.url }}"/>
                                     </div>
                                 {% endif %}
@@ -160,7 +160,7 @@
                     <div class="row">
                         {% for project in project %}
                             {% if project.category == 'UN' %}
-                                <div class="col-6 col-md-6">
+                                <div class="col-3 col-md-3">
                                     <div class="card">
                                         <div class="card__face card__face--front">
                                             <h2 class="text-center">
@@ -183,7 +183,7 @@
                     <div class="row">
                         {% for project in project %}
                             {% if project.category == 'ST' %}
-                                <div class="col-6 col-md-6">
+                                <div class="col-3 col-md-3">
                                     <div class="card">
                                         <div class="card__face card__face--front">
                                             <h2 class="text-center">
@@ -206,7 +206,7 @@
                     <div class="row">
                         {% for project in project %}
                             {% if project.category == 'AL' %}
-                                <div class="col-6 col-md-6 scene scene--card">
+                                <div class="col-3 col-md-3">
                                     <div class="card">
                                         <div class="card__face card__face--front">
                                             <h2 class="text-center">
