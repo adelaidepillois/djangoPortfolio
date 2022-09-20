@@ -143,29 +143,97 @@
             </div>
         </section>
         <section data-scroll-section class="project">
+            <h1 class="text-center">Projets</h1>
+            <div class="container mt-3 mb-5">
+                <div class="col-md-9 col-9 container-onglets">
+                    <div id="onglets" data-anim="1" class="col-md-4 col-4 uniproject onglets">
+                        Universitaires
+                    </div>
+                    <div id="onglets" data-anim="2" class="col-md-4 col-4 onglets active internproject">
+                        Stage
+                    </div>
+                    <div id="onglets" data-anim="3" class="col-md-4 col-4 onglets alternanceproject">
+                        Alternance
+                    </div>
+                </div>
+                <div data-anim="1" class="contenu mt-3">
+                    <div class="row">
+                        {% for project in project %}
+                            {% if project.category == 'UN' %}
+                                <div class="col-6 col-md-6">
+                                    <h2 class="text-center">
+                                        {{ project.date }}
+                                    </h2>
+                                    <img class="detailpicture" src="{{ project.picture.url }}"/>
+                                    <p class="mt-2 text-center">
+                                        {{ project.field }}<br/>
+                                        {{ project.location }}
+                                    </p>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div data-anim="2" class="contenu mt-3">
+                    <div class="row">
+                        {% for project in project %}
+                            {% if project.category == 'ST' %}
+                                <div class="col-6 col-md-6">
+                                    <h2 class="text-center">
+                                        {{ project.date }}
+                                    </h2>
+                                    <img class="detailpicture" src="{{ project.picture.url }}"/>
+                                    <p class="mt-2 text-center">
+                                        {{ project.field }}<br/>
+                                        {{ project.location }}
+                                    </p>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div data-anim="3" class="contenu mt-3">
+                    <div class="row">
+                        {% for project in project %}
+                            {% if project.category == 'AL' %}
+                                <div class="col-6 col-md-6">
+                                    <h2 class="text-center">
+                                        {{ project.date }}
+                                    </h2>
+                                    <img class="detailpicture" src="{{ project.picture.url }}"/>
+                                    <p class="mt-2 text-center">
+                                        {{ project.field }}<br/>
+                                        {{ project.location }}
+                                    </p>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% comment %}<section data-scroll-section class="project">
+            <h1 class="text-center">Projets</h1>
             <div class="container mt-3">
-                <div data-parallax='{"y":0.1, "r":0.09}' data-scroll data-scroll-speed="1" class=" smpoint"></div>
-                <div data-parallax='{"y":0.1, "r":0.09}' data-scroll data-scroll-speed="2" class=" lgpoint"></div>
-                <h1 class="text-center">Projets</h1>
-                <div class="row mt-5 mb-5 projectcard">
-                    <div class="col-md-9 col-9 container-onglets searchproject">
+                <div class="row mt-5 mb-5">
+                    <div class="projectcard col-md-9 col-9 container-onglets searchproject">
                         <div class="row">
-                            <div data-anim="1" class="col-md-4 col-4 onglet uniproject">
+                            <div id="onglets" data-anim="1" class="col-md-4 col-4 onglets uniproject">
                                 Universitaires
                             </div>
-                            <div data-anim="2" class="col-md-4 col-4 onglet selectedproject internproject">
+                            <div id="onglets" data-anim="2" class="col-md-4 col-4 onglets active internproject">
                                 Stage
                             </div>
-                            <div data-anim="3" class="col-md-4 col-4 onglet alternanceproject">
+                            <div id="onglets" data-anim="3" class="col-md-4 col-4 onglets alternanceproject">
                                 Alternance
                             </div>
                         </div>
                     </div>
 
-                    <div data-anim="1" class="row contenu">
+                    <div data-anim="1" class="row projectcard contenu">
                         <div class="col-md-6 col-6 mt-5">
                             <h2>
-                                2019
+                                1
                             </h2>
                             <img class="detailpicture" src="{% static 'images/university.png' %}"/>
                             <p class="mt-2">
@@ -175,7 +243,7 @@
                         </div>
                         <div class="col-md-6 col-6 mt-5">
                             <h2>
-                                2021
+                                2
                             </h2>
                             <img class="detailpicture" src="{% static 'images/university.png' %}"/>
                             <p class="mt-2">
@@ -187,7 +255,7 @@
                     <div data-anim="2" class="row contenu activeContenu">
                         <div class="col-md-6 col-6 mt-5">
                             <h2>
-                                2019
+                                3
                             </h2>
                             <img class="detailpicture" src="{% static 'images/university.png' %}"/>
                             <p class="mt-2">
@@ -197,7 +265,7 @@
                         </div>
                         <div class="col-md-6 col-6 mt-5">
                             <h2>
-                                2021
+                                4
                             </h2>
                             <img class="detailpicture" src="{% static 'images/university.png' %}"/>
                             <p class="mt-2">
@@ -209,7 +277,7 @@
                     <div data-anim="3" class="row contenu">
                         <div class="col-md-6 col-6 mt-5">
                             <h2>
-                                2019
+                                5
                             </h2>
                             <img class="detailpicture" src="{% static 'images/university.png' %}"/>
                             <p class="mt-2">
@@ -219,7 +287,7 @@
                         </div>
                         <div class="col-md-6 col-6 mt-5">
                             <h2>
-                                2021
+                                6
                             </h2>
                             <img class="detailpicture" src="{% static 'images/university.png' %}"/>
                             <p class="mt-2">
@@ -229,8 +297,8 @@
                         </div>
                     </div>
                 </div>
-        </section>
-        <section data-scroll-section class="contact">
+        </section>{% endcomment %}
+        {% comment %} <section data-scroll-section class="contact">
             <div class="container mt-3">
                 <div data-scroll data-scroll-speed="1" class=" smpoint"></div>
                 <div data-scroll data-scroll-speed="2" class=" lgpoint"></div>
@@ -279,7 +347,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>{% endcomment %}
         {% comment %}<section>
             <div class="row mt-5 mb-5 ">
                 <div class="paintproject col-3 mt-5">

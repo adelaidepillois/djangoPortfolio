@@ -10,6 +10,7 @@ class Homepage(TemplateView):
         context = super(Homepage, self).get_context_data()
         context['experience'] = content_models.Experience.objects.all()[:6]
         context['skill'] = content_models.Skill.objects.all()[:6]
+        context['project'] = content_models.Project.objects.all()[:6]
         if 'section' in kwargs:
             context['section'] = kwargs['section']
         return context

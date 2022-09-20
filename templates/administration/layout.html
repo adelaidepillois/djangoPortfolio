@@ -100,7 +100,7 @@
                                 <span class="menu-title">Expériences</span>
                             </a>
                         </div>
-                    <div class="menu-item {% if 'seo' in request.get_full_path %} show {% endif %}">
+                        <div class="menu-item {% if 'seo' in request.get_full_path %} show {% endif %}">
                             <a class="menu-link" href="{% url 'administration:skill' %}">
                                                                     <span class="menu-icon">
                                         <!--begin::Svg Icon | path: icons/duotune/general/gen014.svg-->
@@ -110,30 +110,41 @@
                                 <span class="menu-title">Skills</span>
                             </a>
                         </div>
+                        <div class="menu-item {% if 'seo' in request.get_full_path %} show {% endif %}">
+                            <a class="menu-link" href="{% url 'administration:project' %}">
+                                                                    <span class="menu-icon">
+                                        <!--begin::Svg Icon | path: icons/duotune/general/gen014.svg-->
+                                        <i class="fa-solid fa-comment-dots"></i>
+                                                                        <!--end::Svg Icon-->
+                                    </span>
+                                <span class="menu-title">Projets</span>
+                            </a>
+                        </div>
                     </div>
-                    <!--end::Menu-->
                 </div>
-                <!--end::Aside Menu-->
+                <!--end::Menu-->
             </div>
-            <!--end::Aside menu-->
-            <!--begin::Footer-->
-            <div class="aside-footer flex-column-auto pt-5 pb-7 px-5" id="kt_aside_footer">
-            </div>
-            <!--end::Footer-->
+            <!--end::Aside Menu-->
         </div>
-        <!--end::Aside-->
-        <!--begin::Wrapper-->
-        <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
-            <!--begin::Header-->
-            <div id="kt_header" style="" class="header align-items-stretch">
-                <!--begin::Container-->
-                <div class="container-fluid d-flex align-items-stretch justify-content-between">
-                    <!--begin::Aside mobile toggle-->
-                    <div class="d-flex align-items-center d-lg-none ms-n2 me-2" title="Show aside menu">
-                        <div class="btn btn-icon btn-active-light-primary w-30px h-30px w-md-40px h-md-40px"
-                             id="kt_aside_mobile_toggle">
-                            <!--begin::Svg Icon | path: icons/duotune/abstract/abs015.svg-->
-                            <span class="svg-icon svg-icon-1">
+        <!--end::Aside menu-->
+        <!--begin::Footer-->
+        <div class="aside-footer flex-column-auto pt-5 pb-7 px-5" id="kt_aside_footer">
+        </div>
+        <!--end::Footer-->
+    </div>
+    <!--end::Aside-->
+    <!--begin::Wrapper-->
+    <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+        <!--begin::Header-->
+        <div id="kt_header" style="" class="header align-items-stretch">
+            <!--begin::Container-->
+            <div class="container-fluid d-flex align-items-stretch justify-content-between">
+                <!--begin::Aside mobile toggle-->
+                <div class="d-flex align-items-center d-lg-none ms-n2 me-2" title="Show aside menu">
+                    <div class="btn btn-icon btn-active-light-primary w-30px h-30px w-md-40px h-md-40px"
+                         id="kt_aside_mobile_toggle">
+                        <!--begin::Svg Icon | path: icons/duotune/abstract/abs015.svg-->
+                        <span class="svg-icon svg-icon-1">
 										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                              viewBox="0 0 24 24" fill="none">
 											<path d="M21 7H3C2.4 7 2 6.6 2 6V4C2 3.4 2.4 3 3 3H21C21.6 3 22 3.4 22 4V6C22 6.6 21.6 7 21 7Z"
@@ -143,47 +154,47 @@
                                                   fill="currentColor"/>
 										</svg>
 									</span>
-                            <!--end::Svg Icon-->
-                        </div>
+                        <!--end::Svg Icon-->
                     </div>
-                    <!--end::Aside mobile toggle-->
-                    <!--begin::Mobile logo-->
-                    <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
-                        <a href="{% url 'administration:dashboard' %}" class="d-lg-none">
-                            SN
-                        </a>
-                    </div>
-                    <!--end::Mobile logo-->
-                    <!--begin::Wrapper-->
-                    <div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1">
-                        <!--begin::Navbar-->
-                        <div class="d-flex align-items-stretch" id="kt_header_nav">
-                            <!--begin::Menu wrapper-->
+                </div>
+                <!--end::Aside mobile toggle-->
+                <!--begin::Mobile logo-->
+                <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
+                    <a href="{% url 'administration:dashboard' %}" class="d-lg-none">
+                        SN
+                    </a>
+                </div>
+                <!--end::Mobile logo-->
+                <!--begin::Wrapper-->
+                <div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1">
+                    <!--begin::Navbar-->
+                    <div class="d-flex align-items-stretch" id="kt_header_nav">
+                        <!--begin::Menu wrapper-->
 
+                        <!--end::Menu wrapper-->
+                    </div>
+                    <!--end::Navbar-->
+                    <!--begin::Toolbar wrapper-->
+                    <div class="d-flex align-items-stretch flex-shrink-0">
+                        <!--begin::Search-->
+                        <!--begin::User menu-->
+                        <div class="d-flex align-items-center ms-1 ms-lg-3" id="kt_header_user_menu_toggle">
+                            <!--begin::Menu wrapper-->
+                            <div class="cursor-pointer symbol symbol-30px symbol-md-40px"
+                                 data-kt-menu-trigger="click" data-kt-menu-attach="parent"
+                                 data-kt-menu-placement="bottom-end">
+                                <a href="{% url 'administration:logout_user' %}" class="menu-link px-5">Se
+                                    déconnecter</a>
+                            </div>
                             <!--end::Menu wrapper-->
                         </div>
-                        <!--end::Navbar-->
-                        <!--begin::Toolbar wrapper-->
-                        <div class="d-flex align-items-stretch flex-shrink-0">
-                            <!--begin::Search-->
-                            <!--begin::User menu-->
-                            <div class="d-flex align-items-center ms-1 ms-lg-3" id="kt_header_user_menu_toggle">
-                                <!--begin::Menu wrapper-->
-                                <div class="cursor-pointer symbol symbol-30px symbol-md-40px"
-                                     data-kt-menu-trigger="click" data-kt-menu-attach="parent"
-                                     data-kt-menu-placement="bottom-end">
-                                    <a href="{% url 'administration:logout_user' %}" class="menu-link px-5">Se
-                                        déconnecter</a>
-                                </div>
-                                <!--end::Menu wrapper-->
-                            </div>
-                            <!--end::User menu-->
-                            <!--begin::Header menu toggle-->
-                            <div class="d-flex align-items-center d-lg-none ms-2 me-n3" title="Show header menu">
-                                <div class="btn btn-icon btn-active-light-primary w-30px h-30px w-md-40px h-md-40px"
-                                     id="kt_header_menu_mobile_toggle">
-                                    <!--begin::Svg Icon | path: icons/duotune/text/txt001.svg-->
-                                    <span class="svg-icon svg-icon-1">
+                        <!--end::User menu-->
+                        <!--begin::Header menu toggle-->
+                        <div class="d-flex align-items-center d-lg-none ms-2 me-n3" title="Show header menu">
+                            <div class="btn btn-icon btn-active-light-primary w-30px h-30px w-md-40px h-md-40px"
+                                 id="kt_header_menu_mobile_toggle">
+                                <!--begin::Svg Icon | path: icons/duotune/text/txt001.svg-->
+                                <span class="svg-icon svg-icon-1">
 												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                      viewBox="0 0 24 24" fill="none">
 													<path d="M13 11H3C2.4 11 2 10.6 2 10V9C2 8.4 2.4 8 3 8H13C13.6 8 14 8.4 14 9V10C14 10.6 13.6 11 13 11ZM22 5V4C22 3.4 21.6 3 21 3H3C2.4 3 2 3.4 2 4V5C2 5.6 2.4 6 3 6H21C21.6 6 22 5.6 22 5Z"
@@ -193,58 +204,58 @@
                                                           fill="currentColor"/>
 												</svg>
 											</span>
-                                    <!--end::Svg Icon-->
-                                </div>
+                                <!--end::Svg Icon-->
                             </div>
-                            <!--end::Header menu toggle-->
                         </div>
-                        <!--end::Toolbar wrapper-->
+                        <!--end::Header menu toggle-->
                     </div>
-                    <!--end::Wrapper-->
+                    <!--end::Toolbar wrapper-->
                 </div>
-                <!--end::Container-->
+                <!--end::Wrapper-->
             </div>
-            <!--end::Header-->
-            <!--begin::Content-->
-
-            <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-                <!--begin::Toolbar-->
-                <div class="toolbar" id="kt_toolbar">
-                    <!--begin::Container-->
-                    <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
-                        <!--begin::Page title-->
-                        <div data-kt-swapper="true" data-kt-swapper-mode="prepend"
-                             data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}"
-                             class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
-                            <!--begin::Title-->
-                            <h1 class="d-flex text-dark fw-bolder fs-3 align-items-center my-1">
-                                {% block title %} {% endblock %}
-                                <!--begin::Separator-->
-                                <span class="h-20px border-1 border-gray-200 border-start ms-3 mx-2 me-1"></span>
-                                <!--end::Separator-->
-                                <!--begin::Description-->
-                                <!--end::Description--></h1>
-                            <!--end::Title-->
-                        </div>
-                        <div class="d-flex align-items-center gap-2 gap-lg-3">
-                            <!--begin::Primary button-->
-                            {% block action %}
-                            {% endblock %}
-                            <!--end::Primary button-->
-                        </div>
-
-                    </div>
-
-                </div>
-                {% block content %}
-                {% endblock %}
-            </div>
-
-            <!--end::Content-->
+            <!--end::Container-->
         </div>
-        <!--end::Wrapper-->
+        <!--end::Header-->
+        <!--begin::Content-->
+
+        <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+            <!--begin::Toolbar-->
+            <div class="toolbar" id="kt_toolbar">
+                <!--begin::Container-->
+                <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
+                    <!--begin::Page title-->
+                    <div data-kt-swapper="true" data-kt-swapper-mode="prepend"
+                         data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}"
+                         class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
+                        <!--begin::Title-->
+                        <h1 class="d-flex text-dark fw-bolder fs-3 align-items-center my-1">
+                            {% block title %} {% endblock %}
+                            <!--begin::Separator-->
+                            <span class="h-20px border-1 border-gray-200 border-start ms-3 mx-2 me-1"></span>
+                            <!--end::Separator-->
+                            <!--begin::Description-->
+                            <!--end::Description--></h1>
+                        <!--end::Title-->
+                    </div>
+                    <div class="d-flex align-items-center gap-2 gap-lg-3">
+                        <!--begin::Primary button-->
+                        {% block action %}
+                        {% endblock %}
+                        <!--end::Primary button-->
+                    </div>
+
+                </div>
+
+            </div>
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        <!--end::Content-->
     </div>
-    <!--end::Page-->
+    <!--end::Wrapper-->
+</div>
+<!--end::Page-->
 </div>
 <!--end::Root-->
 <!--begin::Drawers-->

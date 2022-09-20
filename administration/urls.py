@@ -4,6 +4,7 @@ from django.views.static import serve
 from administration.views import dashboard as dashboard_views
 from administration.views import experience as experience_views
 from administration.views import skill as skill_views
+from administration.views import project as project_views
 from administration.views import user as user_views
 from administration.views import authenticate as auth_views
 
@@ -29,6 +30,15 @@ urlpatterns = [
          name="skill_update"),
     path('skill/<int:skill_pk>/delete/', skill_views.SkillDelete.as_view(),
          name="skill_delete"),
+
+    path('project/', project_views.Project.as_view(), name="project"),
+    path('project/ajout/', project_views.ProjectCreate.as_view(), name="project_create"),
+    path('project/<int:project_pk>/update/', project_views.ProjectUpdate.as_view(),
+         name="project_update"),
+    path('project/<int:project_pk>/delete/', project_views.ProjectDelete.as_view(),
+         name="project_delete"),
+
+
     path('login/', auth_views.LoginUser.as_view(), name='login_user'),
     path('logout/', auth_views.LogoutUser.as_view(), name='logout_user'),
 ]

@@ -22,7 +22,7 @@ class Experience(models.Model):
         default='Bordeaux'
     )
     content = models.TextField(
-        verbose_name="Détail de l'expérience'"
+        verbose_name="Détail de l'expérience"
     )
     image = models.ImageField(
         verbose_name="Image de l'expérience"
@@ -83,20 +83,72 @@ class Skill(models.Model):
         default=INFO
     )
     title = models.CharField(
-        max_length=255, verbose_name="Nom de l'expérience"
+        max_length=255, verbose_name="Nom"
     )
     logo = models.ImageField(
-        verbose_name="Logo de l'expérience",
+        verbose_name="Logo",
         default='logo'
     )
     is_active = models.BooleanField(
-        verbose_name="Expérience active"
+        verbose_name="Active"
     )
 
     class Meta:
-        verbose_name = "Expérience"
-        verbose_name_plural = "Expérience"
+        verbose_name = "Skill"
+        verbose_name_plural = "Skill"
         ordering = ['order']
 
     def __str__(self):
         return self.title
+
+
+class Project(models.Model):
+    date_created = models.DateTimeField(
+        verbose_name="Date de création",
+        auto_now_add=True
+    )
+    date_updated = models.DateTimeField(
+        verbose_name="Date de modification",
+        auto_now=True
+    )
+    date = models.CharField(
+        max_length=255, verbose_name="Année de réalisation du projet"
+    )
+    STAGE = 'ST'
+    ALTERN = 'AL'
+    UNIV = 'UN'
+    CAT_CHOICES = (
+        (STAGE, 'Stage'),
+        (ALTERN, 'Alternance'),
+        (UNIV, 'Université')
+    )
+    category = models.CharField(
+        verbose_name="Catégorie",
+        choices=CAT_CHOICES,
+        max_length=2,
+        default=ALTERN
+    )
+    field = models.CharField(
+        max_length=255, verbose_name="Domaine d'application du projet"
+    )
+    location = models.CharField(
+        max_length=255, verbose_name="Lieu du projet"
+    )
+    picture = models.ImageField(
+        verbose_name="Image de l'expérience",
+        default='logo'
+    )
+    is_active = models.BooleanField(
+        verbose_name="Projet active"
+    )
+    content = models.TextField(
+        verbose_name="Détail du projet"
+    )
+
+    class Meta:
+        verbose_name = "Projet"
+        verbose_name_plural = "Projet"
+        ordering = ['date']
+
+    def __str__(self):
+        return self.date
