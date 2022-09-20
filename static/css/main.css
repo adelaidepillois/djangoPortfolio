@@ -71,16 +71,15 @@ body {
     font-size: 28px;
     color: #BC90E4; }
 
-/*.cursor {
+.cursor {
   width: 60px;
   height: 60px;
   border-radius: 50%;
   filter: blur(8px);
-  z-index: 0;
   position: absolute;
-  background: $third-color;
-  z-index: 3;
-}*/
+  background: #BC90E4;
+  z-index: 0; }
+
 /*body::after {
   content: '';
   height: 2px;
@@ -344,9 +343,6 @@ body {
     border-radius: 0px 30px 30px 0px;
     padding: 9px; }
 
-.scene {
-  display: inline-block; }
-
 .card {
   position: relative;
   cursor: pointer;
@@ -374,7 +370,7 @@ body {
   max-width: 339px;
   min-height: 399px;
   max-height: 399px;
-  margin: 38px; }
+  margin: 95px; }
 
 .contact {
   position: relative;

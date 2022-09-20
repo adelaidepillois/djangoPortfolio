@@ -100,16 +100,15 @@ body {
   }
 }
 
-/*.cursor {
+.cursor {
   width: 60px;
   height: 60px;
   border-radius: 50%;
   filter: blur(8px);
-  z-index: 0;
   position: absolute;
   background: $third-color;
-  z-index: 3;
-}*/
+  z-index: 0;
+}
 
 /*body::after {
   content: '';
@@ -503,10 +502,6 @@ body {
 }
 
 
-.scene {
-  display: inline-block;
-}
-
 .card {
   position: relative;
   cursor: pointer;
@@ -537,7 +532,7 @@ body {
     max-width: 339px;
     min-height: 399px;
     max-height: 399px;
-    margin: 38px;
+    margin: 95px;
 }
 
 
