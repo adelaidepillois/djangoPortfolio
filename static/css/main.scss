@@ -413,13 +413,15 @@ body {
 .project {
   //top: -230px;
   position: relative;
-    .detailpicture {
-      border-radius: 10px;
-      max-width: 379px;
-      min-height: 399px;
-      max-height: 399px;
-      object-fit: cover;
-    }
+
+  .detailpicture {
+    border-radius: 10px;
+    max-width: 379px;
+    min-height: 399px;
+    max-height: 399px;
+    object-fit: cover;
+  }
+
   .container {
     background-color: #d9d9d9;
     box-shadow: -30px 29px 28px -7px rgba(217, 217, 217, 0.66);
@@ -497,33 +499,74 @@ body {
 
   }
 
+
 }
-  .contact {
 
-    position: relative;
+
+.scene {
+  display: inline-block;
+}
+
+.card {
+  position: relative;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  transition: transform 1s;
+  border: none;
+}
+
+.card.is-flipped {
+  transform: translateX(-100%) rotateY(-180deg);
+}
+
+.card__face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 30px;
+    text-align: center;
+    font-size: 19px;
+    backface-visibility: hidden;
+}
+
+.card__face--back {
+  transform: rotateY(180deg);
     background-color: $primary-color;
-    color: $four-color;
+    border-radius: 10px;
+    max-width: 339px;
+    min-height: 399px;
+    max-height: 399px;
+    margin: 38px;
+}
 
-    .pictocontact {
-      margin-left: auto;
-      margin-right: auto;
-      vertical-align: center;
-    }
+
+.contact {
+
+  position: relative;
+  background-color: $primary-color;
+  color: $four-color;
+
+  .pictocontact {
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: center;
   }
+}
 
 
-  .paintproject {
-    position: relative;
-    /* right: 19%; */
-    /* left: -48%; */
-    /* margin-right: 81px; */
-    /* padding-left: 0%; */
-    top: 93%;
-    left: -53%;
-    margin-right: 160px;
-    /* height: 30%; */
-    /* z-index: 10 !important;*/
-  }
+.paintproject {
+  position: relative;
+  /* right: 19%; */
+  /* left: -48%; */
+  /* margin-right: 81px; */
+  /* padding-left: 0%; */
+  top: 93%;
+  left: -53%;
+  margin-right: 160px;
+  /* height: 30%; */
+  /* z-index: 10 !important;*/
+}
 
 
 

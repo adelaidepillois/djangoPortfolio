@@ -1,3 +1,6 @@
+
+
+//GESTION ONGLET + AFFICHAGE CONTENU
 const onglets = document.querySelectorAll('.onglets');
 const contenu = document.querySelectorAll('.contenu')
 let index = 0;
@@ -30,6 +33,17 @@ onglets.forEach(onglet => {
         }
     })
 })
+
+
+//FLIP CARD
+var cards = document.querySelectorAll('.card');
+
+[...cards].forEach((card)=>{
+  card.addEventListener( 'click', function() {
+    card.classList.toggle('is-flipped');
+  });
+});
+
 
 
 var curseur = document.getElementById('cursor1');

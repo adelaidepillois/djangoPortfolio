@@ -160,33 +160,43 @@
                     <div class="row">
                         {% for project in project %}
                             {% if project.category == 'UN' %}
-                                <div class="col-6 col-md-6">
-                                    <h2 class="text-center">
-                                        {{ project.date }}
-                                    </h2>
-                                    <img class="detailpicture" src="{{ project.picture.url }}"/>
-                                    <p class="mt-2 text-center">
-                                        {{ project.field }}<br/>
-                                        {{ project.location }}
-                                    </p>
+                                <div class="col-6 col-md-6 scene scene--card">
+                                    <div class="card">
+                                        <div class="card__face card__face--front">
+                                            <h2 class="text-center">
+                                                {{ project.date }}
+                                            </h2>
+                                            <img class="detailpicture" src="{{ project.picture.url }}"/>
+                                            <p class="mt-2 text-center">
+                                                {{ project.field }}<br/>
+                                                {{ project.location }}
+                                            </p>
+                                        </div>
+                                        <div class="mt-5 pt-5 card__face card__face--back">{{ project.content }}</div>
+                                    </div>
                                 </div>
                             {% endif %}
                         {% endfor %}
                     </div>
                 </div>
-                <div data-anim="2" class="contenu mt-3">
+                <div data-anim="2" class="contenu activeContenu mt-3">
                     <div class="row">
                         {% for project in project %}
                             {% if project.category == 'ST' %}
-                                <div class="col-6 col-md-6">
-                                    <h2 class="text-center">
-                                        {{ project.date }}
-                                    </h2>
-                                    <img class="detailpicture" src="{{ project.picture.url }}"/>
-                                    <p class="mt-2 text-center">
-                                        {{ project.field }}<br/>
-                                        {{ project.location }}
-                                    </p>
+                                <div class="col-6 col-md-6 scene scene--card">
+                                    <div class="card">
+                                        <div class="card__face card__face--front">
+                                            <h2 class="text-center">
+                                                {{ project.date }}
+                                            </h2>
+                                            <img class="detailpicture" src="{{ project.picture.url }}"/>
+                                            <p class="mt-2 text-center">
+                                                {{ project.field }}<br/>
+                                                {{ project.location }}
+                                            </p>
+                                        </div>
+                                        <div class="mt-5 pt-5 card__face card__face--back">{{ project.content }}</div>
+                                    </div>
                                 </div>
                             {% endif %}
                         {% endfor %}
@@ -196,15 +206,20 @@
                     <div class="row">
                         {% for project in project %}
                             {% if project.category == 'AL' %}
-                                <div class="col-6 col-md-6">
-                                    <h2 class="text-center">
-                                        {{ project.date }}
-                                    </h2>
-                                    <img class="detailpicture" src="{{ project.picture.url }}"/>
-                                    <p class="mt-2 text-center">
-                                        {{ project.field }}<br/>
-                                        {{ project.location }}
-                                    </p>
+                                <div class="col-6 col-md-6 scene scene--card">
+                                    <div class="card">
+                                        <div class="card__face card__face--front">
+                                            <h2 class="text-center">
+                                                {{ project.date }}
+                                            </h2>
+                                            <img class="detailpicture" src="{{ project.picture.url }}"/>
+                                            <p class="mt-2 text-center">
+                                                {{ project.field }}<br/>
+                                                {{ project.location }}
+                                            </p>
+                                        </div>
+                                        <div class="mt-5 pt-5 card__face card__face--back">{{ project.content }}</div>
+                                    </div>
                                 </div>
                             {% endif %}
                         {% endfor %}
@@ -212,93 +227,7 @@
                 </div>
             </div>
         </section>
-        {% comment %}<section data-scroll-section class="project">
-            <h1 class="text-center">Projets</h1>
-            <div class="container mt-3">
-                <div class="row mt-5 mb-5">
-                    <div class="projectcard col-md-9 col-9 container-onglets searchproject">
-                        <div class="row">
-                            <div id="onglets" data-anim="1" class="col-md-4 col-4 onglets uniproject">
-                                Universitaires
-                            </div>
-                            <div id="onglets" data-anim="2" class="col-md-4 col-4 onglets active internproject">
-                                Stage
-                            </div>
-                            <div id="onglets" data-anim="3" class="col-md-4 col-4 onglets alternanceproject">
-                                Alternance
-                            </div>
-                        </div>
-                    </div>
-
-                    <div data-anim="1" class="row projectcard contenu">
-                        <div class="col-md-6 col-6 mt-5">
-                            <h2>
-                                1
-                            </h2>
-                            <img class="detailpicture" src="{% static 'images/university.png' %}"/>
-                            <p class="mt-2">
-                                Agro écologie<br/>
-                                UC Berkeley, California
-                            </p>
-                        </div>
-                        <div class="col-md-6 col-6 mt-5">
-                            <h2>
-                                2
-                            </h2>
-                            <img class="detailpicture" src="{% static 'images/university.png' %}"/>
-                            <p class="mt-2">
-                                Informatique<br/>
-                                IHU Liryc, Pessac
-                            </p>
-                        </div>
-                    </div>
-                    <div data-anim="2" class="row contenu activeContenu">
-                        <div class="col-md-6 col-6 mt-5">
-                            <h2>
-                                3
-                            </h2>
-                            <img class="detailpicture" src="{% static 'images/university.png' %}"/>
-                            <p class="mt-2">
-                                Agro écologie<br/>
-                                UC Berkeley, California
-                            </p>
-                        </div>
-                        <div class="col-md-6 col-6 mt-5">
-                            <h2>
-                                4
-                            </h2>
-                            <img class="detailpicture" src="{% static 'images/university.png' %}"/>
-                            <p class="mt-2">
-                                Informatique<br/>
-                                IHU Liryc, Pessac
-                            </p>
-                        </div>
-                    </div>
-                    <div data-anim="3" class="row contenu">
-                        <div class="col-md-6 col-6 mt-5">
-                            <h2>
-                                5
-                            </h2>
-                            <img class="detailpicture" src="{% static 'images/university.png' %}"/>
-                            <p class="mt-2">
-                                Agro écologie<br/>
-                                UC Berkeley, California
-                            </p>
-                        </div>
-                        <div class="col-md-6 col-6 mt-5">
-                            <h2>
-                                6
-                            </h2>
-                            <img class="detailpicture" src="{% static 'images/university.png' %}"/>
-                            <p class="mt-2">
-                                Informatique<br/>
-                                IHU Liryc, Pessac
-                            </p>
-                        </div>
-                    </div>
-                </div>
-        </section>{% endcomment %}
-        {% comment %} <section data-scroll-section class="contact">
+        <section data-scroll-section class="contact">
             <div class="container mt-3">
                 <div data-scroll data-scroll-speed="1" class=" smpoint"></div>
                 <div data-scroll data-scroll-speed="2" class=" lgpoint"></div>
@@ -347,7 +276,7 @@
                     </div>
                 </div>
             </div>
-        </section>{% endcomment %}
+        </section>
         {% comment %}<section>
             <div class="row mt-5 mb-5 ">
                 <div class="paintproject col-3 mt-5">
