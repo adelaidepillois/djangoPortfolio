@@ -18,6 +18,7 @@ from django.urls import path, include, re_path
 from djangoPortfolio import views as common_views
 from django.conf import settings
 from django.conf.urls.static import static
+from sendemail.views import index
 from django.views.static import serve
 import debug_toolbar
 
@@ -26,6 +27,8 @@ urlpatterns = [
                   path('', common_views.Homepage.as_view(), name="homepage"),
                   path('administration/', include('administration.urls', namespace="administration")),
                   path(r'^ckeditor/', include('ckeditor_uploader.urls')),
+                  # path(r'^sendemail/',  include('sendemail.urls')),
+                  path('index/', index, name='index'),
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

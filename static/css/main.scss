@@ -100,15 +100,16 @@ body {
   }
 }
 
-.cursor {
+
+/*.cursor {
   width: 60px;
   height: 60px;
   border-radius: 50%;
   filter: blur(8px);
   position: absolute;
   background: $third-color;
-  z-index: 0;
-}
+  z-index: 3;
+}*/
 
 /*body::after {
   content: '';
@@ -195,14 +196,14 @@ body {
   top: 185px;
   position: relative;
 
-  .lgpoint {
-    right: 22%;
-    top: 86%;
+  .mdpoint {
+    right: 69%;
+    top: 55%;
   }
 
   .smpoint {
-    right: 8%;
-    top: 4%;
+    right: 15%;
+    top: 0%;
   }
 
 
@@ -331,7 +332,7 @@ body {
       min-width: 100vh;
       height: 100vw;
       margin-top: 100px !important;
-      margin-bottom: -455px;
+      margin-bottom: -664px;
     }
 
     ::-webkit-scrollbar {
@@ -349,8 +350,8 @@ body {
   }
 
   .lgpoint {
-    right: 4%;
-    top: 116%;
+    right: 5%;
+    top: 11%;
   }
 
   .smpoint {
@@ -365,55 +366,69 @@ body {
     box-shadow: -14px 16px 34px 1px rgba(253, 255, 166, 0.68);
     color: $primary-color;
     border-radius: 10px;
+    height: 360px;
 
     .logoweb {
-      margin-top: 20px;
       align-items: center;
 
       .logo {
         margin-left: 10px;
--webkit-transition: all 1s ease; /* Safari et Chrome */
--moz-transition: all 1s ease; /* Firefox */
--ms-transition: all 1s ease; /* Internet Explorer 9 */
--o-transition: all 1s ease; /* Opera */
-transition: all 1s ease;
+        -webkit-transition: all 1s ease; /* Safari et Chrome */
+        -moz-transition: all 1s ease; /* Firefox */
+        -ms-transition: all 1s ease; /* Internet Explorer 9 */
+        -o-transition: all 1s ease; /* Opera */
+        transition: all 1s ease;
       }
+
       :hover {
--webkit-transform:scale(1.25); /* Safari et Chrome */
--moz-transform:scale(1.25); /* Firefox */
--ms-transform:scale(1.25); /* Internet Explorer 9 */
--o-transform:scale(1.25); /* Opera */
-transform:scale(1.25);
+        -webkit-transform: scale(1.25); /* Safari et Chrome */
+        -moz-transform: scale(1.25); /* Firefox */
+        -ms-transform: scale(1.25); /* Internet Explorer 9 */
+        -o-transform: scale(1.25); /* Opera */
+        transform: scale(1.25);
       }
     }
   }
 
-  .theoryskill {
-    padding: 30px;
-    background-color: #d9d9d9;
-    box-shadow: 30px -30px 28px -7px rgba(217, 217, 217, 0.66);
-    color: $primary-color;
-    border-radius: 10px;
-
-    ul li {
-      background-color: #d9d9d9;
-    }
-  }
-
-  .softskill {
-    padding: 30px;
-    background-color: $primary-color;
-    box-shadow: 20px 16px 34px 1px rgba(46, 12, 89, 0.68);
-    color: #d9d9d9;
-    border-radius: 10px;
+  .skillcard {
 
     .list-group-item {
-      color: white;
+      border: none;
+      padding: 0px !important;
     }
 
-    ul li {
+    .theoryskill {
+      padding: 30px;
+      background-color: #d9d9d9;
+      box-shadow: 30px -30px 28px -7px rgba(217, 217, 217, 0.66);
+      color: $primary-color;
+      border-radius: 10px;
+      height: 175px;
+
+
+      ul li {
+        background-color: #d9d9d9;
+      }
+    }
+
+    .softskill {
+      padding: 30px;
       background-color: $primary-color;
-      color: white;
+      box-shadow: 20px 16px 34px 1px rgba(46, 12, 89, 0.68);
+      color: #d9d9d9;
+      border-radius: 10px;
+      height: 175px;
+
+      .list-group-item {
+        color: white;
+        border: none;
+
+      }
+
+      ul li {
+        background-color: $primary-color;
+        color: white;
+      }
     }
   }
 }
@@ -421,6 +436,12 @@ transform:scale(1.25);
 .project {
   //top: -230px;
   position: relative;
+  margin-top: 40px;
+
+  .lgpoint {
+    right: 3%;
+    top: 2%;
+  }
 
   .detailpicture {
     border-radius: 10px;
@@ -547,13 +568,50 @@ transform:scale(1.25);
 .contact {
 
   position: relative;
-  background-color: $primary-color;
+  //background-color: $primary-color;
   color: $four-color;
+  background-image: linear-gradient(270deg, #bc90e4 0, #a671d6 16.67%, #4b2a6a 33.33%, #2e0c59 50%, #2e0c59 66.67%, #2e0c59 83.33%, #2e0c59 100%);
+
+  .smpoint {
+    bottom: 6%;
+    right: 22%;
+
+  }
+
+  .mdpoint {
+    right: 34%;
+    top: 1%;
+  }
+
+  .contact-info {
+    margin-top: 146px;
+    position: absolute;
+    right: 14px;
+    //background-color: $third-color;
+  }
 
   .pictocontact {
-    margin-left: auto;
-    margin-right: auto;
     vertical-align: center;
+
+
+    .logo {
+      margin-left: 10px;
+      -webkit-transition: all 1s ease; /* Safari et Chrome */
+      -moz-transition: all 1s ease; /* Firefox */
+      -ms-transition: all 1s ease; /* Internet Explorer 9 */
+      -o-transition: all 1s ease; /* Opera */
+      transition: all 1s ease;
+          margin-left: auto;
+    margin-right: auto;
+    }
+
+    :hover {
+      -webkit-transform: scale(1.25); /* Safari et Chrome */
+      -moz-transform: scale(1.25); /* Firefox */
+      -ms-transform: scale(1.25); /* Internet Explorer 9 */
+      -o-transform: scale(1.25); /* Opera */
+      transform: scale(1.25);
+    }
   }
 }
 
@@ -572,4 +630,67 @@ transform:scale(1.25);
 }
 
 
+@media (min-width: 1600px) {
+  .history .testcard .container {
+    margin-bottom: -821px;
+  }
+}
 
+@media (max-width: 1400px) {
+  .history .testcard .container {
+    margin-bottom: -559px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .history .testcard .container {
+    margin-bottom: -488px;
+  }
+}
+
+@media (max-width: 1250px) {
+  .history .testcard .container {
+    margin-bottom: -390px;
+  }
+  .cardpicture .picturehome {
+    border-radius: 233.5px;
+    overflow: hidden;
+    width: 377px;
+    height: 582px;
+    object-fit: cover;
+    position: relative;
+    left: -13px;
+    top: 38px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .history .testcard .container {
+    margin-bottom: -330px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .history .testcard .container {
+    margin-bottom: -239px;
+  }
+  .cardpicture .picturehome {
+    border-radius: 233.5px;
+    overflow: hidden;
+    width: 273px;
+    height: 436px;
+    object-fit: cover;
+    position: relative;
+    left: -13px;
+    top: 92px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .history .testcard .container {
+    margin-bottom: -260px;
+  }
+}
+
+
+@import "mainmedia";

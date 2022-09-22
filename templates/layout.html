@@ -24,7 +24,7 @@
     <title>Portfolio</title>
 </head>
 
-<body >
+<body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
     <div class="container p-0">
         <a data-parallax='{"y": 0.3, "variable": true}' class="navbar-brand" href="{% url 'homepage' %}">
@@ -39,30 +39,30 @@
                     {% url 'homepage' as homepage_url %}
                     <a
                             class="nav-link {% if request.get_full_path == homepage_url %} active {% endif %}"
-                            aria-current="page" href="{% url 'homepage' %}">About me</a>
+                            aria-current="page" href="{% url 'homepage' %}">Home</a>
                 </li>
+
+
                 <li id="navbar" class="nav-item dropdown text-sm-start text-lg-center">
-                    {% url 'workwithus' as workwithus_url %}
+                    {% url 'homepage' as homepage_url %}
                     <a
-                            class="nav-link dropdown-toggle {% if request.get_full_path == workwithus_url %} active {% endif %}"
-                            id="workwithsn" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                        Skills
-                    </a>
+                            class="nav-link {% if request.get_full_path == homepage_url %} active {% endif %}"
+                            aria-current="page" href="{% url 'homepage' %}">Skills</a>
                 </li>
+
+
                 <li class="nav-item dropdown text-sm-start text-lg-center">
-                    {% url 'speedteam' as speedteam_url %}
+                    {% url 'homepage' as homepage_url %}
                     <a
-                            class="nav-link dropdown-toggle  {% if request.get_full_path == speedteam_url %} active {% endif %}"
-                            aria-current="page" id="speedteammenu" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                        Project
-                    </a>
+                            class="nav-link {% if request.get_full_path == homepage_url %} active {% endif %}"
+                            aria-current="page" href="{% url 'homepage' %}">Project</a>
                 </li>
+
+
                 <li class="nav-item cta-item text-sm-start text-lg-center">
-                    {% url 'joinus' as joinus_url %}
-                    <button class="btnnavbar nav-link {% if request.get_full_path == joinus %} active {% endif %}"
-                            aria-current="page" onclick="window.location.href='#'"> Contact
+                    {% url 'homepage' as homepage_url %}
+                    <button class="btnnavbar nav-link {% if request.get_full_path == homepage_url %} active {% endif %}"
+                            aria-current="page" href="{% url 'homepage' %}"> Contact
                     </button>
                 </li>
             </ul>

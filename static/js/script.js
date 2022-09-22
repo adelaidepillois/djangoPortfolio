@@ -1,5 +1,4 @@
 
-
 //GESTION ONGLET + AFFICHAGE CONTENU
 const onglets = document.querySelectorAll('.onglets');
 const contenu = document.querySelectorAll('.contenu')
@@ -157,6 +156,8 @@ class Parallax {
                         document.getElementById("smpoint").style.width = "160px";
                         document.getElementById("smpoint").style.right = "3%";
                         document.getElementById("smpoint").style.height = "160px";
+                        document.getElementById("lgpoint").style.top = "86%";
+                        document.getElementById("lgpoint").style.right = "50%";
 
                         /*                        document.getElementById("moon").style.top = "70%";
                                                 document.getElementById("moon").style.width = "200px";
@@ -172,7 +173,7 @@ class Parallax {
                         document.getElementById("smpoint").style.height = "60px";
                         document.getElementById("mdpoint").style.top = "-11%";
                         document.getElementById("mdpoint").style.right = "42%";
-                        document.getElementById("lgpoint").style.top = "100%";
+                        document.getElementById("lgpoint").style.top = "86%";
                         document.getElementById("lgpoint").style.right = "50%";
 
 

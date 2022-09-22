@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'sass_processor',
     'user',
     'content',
+    'sendemail',
     'seo',
 ]
 
@@ -139,6 +140,11 @@ STATICFILES_FINDERS = [
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = 'e5ff689394e744'
+EMAIL_HOST_PASSWORD = '96ac956c32793d'
+EMAIL_PORT = '2525'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

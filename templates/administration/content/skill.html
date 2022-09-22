@@ -63,7 +63,13 @@
                                     {{ skill.order }}
                                 </td>
                                 <td>
-                                    {{ skill.category }}
+                                    {% if skill.category == 'IN' %}
+                                    <div class="badge badge-warning text-secondary">Informatique</div>
+                                    {% elif skill.category == 'TH' %}
+                                    <div class="badge badge-info text-secondary">Théorique</div>
+                                    {% else %}
+                                    <div class="badge badge-success text-secondary">Soft-skill</div>
+                                    {% endif %}
                                 </td>
                                 <td>
                                     {% if skill.is_active %}
