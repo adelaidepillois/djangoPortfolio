@@ -4,6 +4,25 @@ $third-color: #BC90E4;
 $four-color: #FDFFA6;
 
 
+@font-face {
+  font-family: "Pilow lava";
+  src: url("../fonts/Pilowlava-Regular.otf");
+}
+
+@font-face {
+  font-family: "Tiny Fonts";
+  src: url("../fonts/TINY5x3-100.otf");
+}
+
+.pilowfont {
+  font-family: "Pilow lava";
+  font-size: 50px;
+}
+
+.green-text{
+  color: #D7FFC5;;
+}
+
 .lgpoint {
   background-color: #FDFFA6;
   width: 160px;
@@ -39,8 +58,8 @@ $four-color: #FDFFA6;
 }
 
 .navbar {
-  background-color: #D7FFC5 !important;
-  color: #2E0C59;
+  background-color: $primary-color !important;
+  color: #D7FFC5;
 
   .logonav {
     position: absolute;
@@ -71,6 +90,10 @@ $four-color: #FDFFA6;
   }
 }
 
+.navbar-light .navbar-nav .nav-link.active {
+  color: #D7FFC5;
+}
+
 #moon {
   position: absolute;
   top: -12px !important;
@@ -80,12 +103,15 @@ $four-color: #FDFFA6;
 }
 
 body {
-  background-color: #D7FFC5;
-  color: #2E0C59;
+background-image: linear-gradient(0deg, #2e0c59 0, #a88ecb 16.67%, #cef1c1 33.33%, #cfedc4 50%, #7023b3 66.67%, #2e0c59 83.33%, #2e0c59 100%);  //background-color: $primary-color;
+  //background-color: #D7FFC5;
+  color: $secondary-color;
   //cursor: none;
 
 
   h1 {
+    color: $primary-color;
+    font-family: "Pilow lava";
     font-style: normal;
     font-weight: 700;
     font-size: 37px;
@@ -97,6 +123,13 @@ body {
     font-weight: 300;
     font-size: 28px;
     color: #BC90E4;
+  }
+
+  h2 {
+    font-family: 'Tiny Fonts';
+    color: #BC90E4;
+    font-size: 35px;
+    line-height: 35px;
   }
 }
 
@@ -174,6 +207,7 @@ body {
   align-items: center;
   display: inline-block;
   padding: 12px 18px;
+  cursor: pointer;
 
   &:hover {
     background-color: $third-color;
@@ -271,7 +305,8 @@ body {
   }
 
   .historycard {
-    background-color: $primary-color;
+    //background-color: $primary-color;
+    background: $primary-color;
     color: white;
     border-radius: 20px;
     padding: 30px;
@@ -413,7 +448,8 @@ body {
 
     .softskill {
       padding: 30px;
-      background-color: $primary-color;
+      background: $primary-color;
+      //background-color: $primary-color;
       box-shadow: 20px 16px 34px 1px rgba(46, 12, 89, 0.68);
       color: #d9d9d9;
       border-radius: 10px;
@@ -426,7 +462,8 @@ body {
       }
 
       ul li {
-        background-color: $primary-color;
+        //background-color: $primary-color;
+        background: $primary-color;
         color: white;
       }
     }
@@ -436,7 +473,8 @@ body {
 .project {
   //top: -230px;
   position: relative;
-  margin-top: 40px;
+  margin-top: 90px;
+  margin-bottom: 160px;
 
   .lgpoint {
     right: 3%;
@@ -445,7 +483,7 @@ body {
 
   .detailpicture {
     border-radius: 10px;
-    max-width: 379px;
+    max-width: 255px;
     /* min-height: 399px; */
     max-height: 238px;
     object-fit: cover;
@@ -570,8 +608,7 @@ body {
   position: relative;
   //background-color: $primary-color;
   color: $four-color;
-  background-image: linear-gradient(270deg, #bc90e4 0, #a671d6 16.67%, #4b2a6a 33.33%, #2e0c59 50%, #2e0c59 66.67%, #2e0c59 83.33%, #2e0c59 100%);
-
+  //background-image: linear-gradient(0deg, #bc90e4 0, #704798 16.67%, #4b2a6a 33.33%, #2e0c59 50%, #2e0c59 66.67%, #2e0c59 83.33%, #2e0c59 100%);
   .smpoint {
     bottom: 6%;
     right: 22%;
@@ -601,8 +638,8 @@ body {
       -ms-transition: all 1s ease; /* Internet Explorer 9 */
       -o-transition: all 1s ease; /* Opera */
       transition: all 1s ease;
-          margin-left: auto;
-    margin-right: auto;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     :hover {
@@ -638,7 +675,7 @@ body {
 
 @media (max-width: 1400px) {
   .history .testcard .container {
-    margin-bottom: -559px;
+    margin-bottom: -513px;
   }
 }
 
@@ -650,7 +687,7 @@ body {
 
 @media (max-width: 1250px) {
   .history .testcard .container {
-    margin-bottom: -390px;
+    margin-bottom: -425px;
   }
   .cardpicture .picturehome {
     border-radius: 233.5px;
@@ -666,7 +703,7 @@ body {
 
 @media (max-width: 1150px) {
   .history .testcard .container {
-    margin-bottom: -330px;
+    margin-bottom: -336px;
   }
 }
 
@@ -688,7 +725,7 @@ body {
 
 @media (max-width: 1050px) {
   .history .testcard .container {
-    margin-bottom: -260px;
+    margin-bottom: -276px;
   }
 }
 

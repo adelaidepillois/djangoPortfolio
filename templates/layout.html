@@ -21,6 +21,7 @@
     {% compress css %}
         <link href="{% sass_src 'css/main.scss' %}" rel="stylesheet" type="text/css"/>
     {% endcompress %}
+<link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/ranchers" type="text/css"/>
     <title>Portfolio</title>
 </head>
 
@@ -47,7 +48,7 @@
                     {% url 'homepage' as homepage_url %}
                     <a
                             class="nav-link {% if request.get_full_path == homepage_url %} active {% endif %}"
-                            aria-current="page" href="{% url 'homepage' %}">Skills</a>
+                            aria-current="page" href="{% url 'homepage' %}#skills">Skills</a>
                 </li>
 
 
@@ -55,14 +56,14 @@
                     {% url 'homepage' as homepage_url %}
                     <a
                             class="nav-link {% if request.get_full_path == homepage_url %} active {% endif %}"
-                            aria-current="page" href="{% url 'homepage' %}">Project</a>
+                            aria-current="page" href="{% url 'homepage' %}#project">Project</a>
                 </li>
 
 
                 <li class="nav-item cta-item text-sm-start text-lg-center">
                     {% url 'homepage' as homepage_url %}
-                    <button class="btnnavbar nav-link {% if request.get_full_path == homepage_url %} active {% endif %}"
-                            aria-current="page" href="{% url 'homepage' %}"> Contact
+                    <button class="btnnavbar nav-link text-dark {% if request.get_full_path == homepage_url %} active {% endif %}"
+                            aria-current="page" href="{% url 'homepage' %}#contact"> Contact
                     </button>
                 </li>
             </ul>

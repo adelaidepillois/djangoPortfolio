@@ -44,9 +44,9 @@
                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_subscriptions_table">
                         <thead>
                         <tr class="text-start text-muted fw-bolder fs-7 text-uppercase gs-0">
-                            <th class="min-w-125px">Titre</th>
-                            <th class="min-w-125px">Ordre</th>
                             <th class="min-w-125px">Catégorie</th>
+                            <th class="min-w-125px">Date</th>
+                            <th class="min-w-125px">Lieu</th>
                             <th class="min-w-125px">Active</th>
                             <th class="text-end min-w-70px">Actions</th>
                         </tr>
@@ -55,15 +55,19 @@
                         {% for project in project_list %}
                             <tr>
                                 <td>
-                                    <a href="" class="text-gray-800 text-hover-primary mb-1">
-                                        {{ project.title }}
-                                    </a>
+                                    {% if project.category == 'ST' %}
+                                        <div class="badge badge-warning text-secondary">Stage</div>
+                                    {% elif project.category == 'AL' %}
+                                        <div class="badge badge-info text-secondary">Alternance</div>
+                                    {% else %}
+                                        <div class="badge badge-success text-secondary">Universitaire</div>
+                                    {% endif %}
                                 </td>
                                 <td>
-                                    {{ project.order }}
+                                    {{ project.date }}
                                 </td>
                                 <td>
-                                    {{ project.category }}
+                                    {{ project.location }}
                                 </td>
                                 <td>
                                     {% if project.is_active %}

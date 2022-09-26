@@ -11,7 +11,7 @@ class Homepage(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(Homepage, self).get_context_data()
-        context['experience'] = content_models.Experience.objects.all()[:6]
+        context['experience'] = content_models.Experience.objects.all()
         context['skill'] = content_models.Skill.objects.all()
         context['project'] = content_models.Project.objects.all()[:6]
         context['contactform'] = contact_form.ContactForm()
