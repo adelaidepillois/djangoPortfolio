@@ -20,16 +20,13 @@
                         <span>Hi! Je suis Adélaïde</span><br/>
                             <span>Développeuse web</span>
                         </h1>
-                        <p data-scroll data-scroll-speed="1">Je suis une personne dynamique et créative qui aime les
+                        <p data-scroll data-scroll-speed="1" class="text">Je suis une personne dynamique et créative qui aime les
                             défis.
                             Le développement informatique ainsi que la recherche de la
                             meilleure solution à mettre en place afin de garantir la meilleure
                             expérience utilisateur est un problème sur lequel j’aime réfléchir.
                             Je souhaite également élargir mes compétences et
                             je n’ai donc pas peur d’en découvrir de nouvelles.</p>
-{% comment %}                        <button class="btncontact mt-4" href="{% url 'homepage' %}contact/">
-                            Contactez-moi !
-                        </button>{% endcomment %}
                         <button class="btncontact mt-4" onclick="window.location.href='{% url 'homepage' %}#contact'"
                                 class="data-scroll btn btn-light-white">Contactez-moi !
                         </button>
@@ -63,7 +60,7 @@
                                                         <h2>
                                                             {{ experience.title }}
                                                         </h2>
-                                                        <p class="mt-4 text-yellow">
+                                                        <p class="mt-4 text-yellow text">
                                                             {{ experience.date_started }}
                                                             - {{ experience.date_ended }}
                                                             <br/>
@@ -74,7 +71,7 @@
                                                         <img class="logo" src="{{ experience.logo.url }}"/>
                                                     </div>
                                                     <div class="col-md-12 col-12 mt-1">
-                                                        <p>
+                                                        <p class="text">
                                                             {{ experience.content }}
                                                         </p>
                                                         {% if experience.is_active %}
@@ -133,7 +130,7 @@
                                         {% for skill in skill %}
                                             {% if skill.category == 'TH' %}
                                                 <div class="col-md-6 col-6">
-                                                    <li class="list-group-item">{{ skill.title }}</li>
+                                                    <li class="list-group-item text">{{ skill.title }}</li>
                                                 </div>
                                             {% endif %}
                                         {% endfor %}
@@ -149,7 +146,7 @@
                                         {% for skill in skill %}
                                             {% if skill.category == 'ST' %}
                                                 <div class="col-md-6 col-6">
-                                                    <li class="list-group-item">{{ skill.title }}</li>
+                                                    <li class="list-group-item text">{{ skill.title }}</li>
                                                 </div>
                                             {% endif %}
                                         {% endfor %}
@@ -171,13 +168,13 @@
             <h1 class="text-center pb-4">Projets</h1>
             <div class="container mt-3 mb-5">
                 <div class="col-md-9 col-9 container-onglets">
-                    <div id="onglets" data-anim="1" class="col-md-4 col-4 uniproject onglets">
+                    <div id="onglets" data-anim="1" class="col-md-4 col-4 uniproject onglets text">
                         Universitaires
                     </div>
-                    <div id="onglets" data-anim="2" class="col-md-4 col-4 onglets active internproject">
+                    <div id="onglets" data-anim="2" class="col-md-4 col-4 onglets active internproject text">
                         Stage
                     </div>
-                    <div id="onglets" data-anim="3" class="col-md-4 col-4 onglets alternanceproject">
+                    <div id="onglets" data-anim="3" class="col-md-4 col-4 onglets alternanceproject text">
                         Alternance
                     </div>
                 </div>
@@ -192,12 +189,12 @@
                                                 {{ project.date }}
                                             </h2>
                                             <img class="detailpicture" src="{{ project.picture.url }}"/>
-                                            <p class="mt-2 text-center">
+                                            <p class="mt-2 text-center text">
                                                 {{ project.field }}<br/>
                                                 {{ project.location }}
                                             </p>
                                         </div>
-                                        <div class="mt-5 pt-5 card__face card__face--back">{{ project.content }}</div>
+                                        <div class="mt-5 pt-5 card__face card__face--back text">{{ project.content }}</div>
                                     </div>
                                 </div>
                             {% endif %}
@@ -215,12 +212,12 @@
                                                 {{ project.date }}
                                             </h2>
                                             <img class="detailpicture" src="{{ project.picture.url }}"/>
-                                            <p class="mt-2 text-center">
+                                            <p class="mt-2 text-center text">
                                                 {{ project.field }}<br/>
                                                 {{ project.location }}
                                             </p>
                                         </div>
-                                        <div class="mt-5 pt-5 card__face card__face--back">{{ project.content }}</div>
+                                        <div class="mt-5 pt-5 card__face card__face--back text">{{ project.content }}</div>
                                     </div>
                                 </div>
                             {% endif %}
@@ -238,12 +235,12 @@
                                                 {{ project.date }}
                                             </h2>
                                             <img class="detailpicture" src="{{ project.picture.url }}"/>
-                                            <p class="mt-2 text-center">
+                                            <p class="mt-2 text-center text">
                                                 {{ project.field }}<br/>
                                                 {{ project.location }}
                                             </p>
                                         </div>
-                                        <div class="mt-5 pt-5 card__face card__face--back">{{ project.content }}</div>
+                                        <div class="mt-5 pt-5 card__face card__face--back text">{{ project.content }}</div>
                                     </div>
                                 </div>
                             {% endif %}
@@ -266,23 +263,31 @@
                             {% csrf_token %}
                             <div class="row">
                                 <div class="col-6">
-                                    <label class="pb-2" for="exampleFormControlTextarea1">Prénom :</label>
+                                    <label class="pb-2" for="exampleFormControlTextarea1">
+                                        <p class="text">Prénom :</p>
+                                    </label>
                                     {{ contactform.firstname|addcss:'form-control' }}
                                 </div>
                                 <div class="col-6">
-                                    <label class="pb-2" for="exampleFormControlTextarea1">Nom :</label>
+                                    <label class="pb-2" for="exampleFormControlTextarea1 text">
+                                        <p class="text">Nom :</p>
+                                    </label>
                                     {{ contactform.lastname|addcss:'form-control' }}
                                 </div>
                                 <div class="col-12">
-                                    <label class="pt-2 pb-2" for="exampleFormControlTextarea1">Adresse email :</label>
+                                    <label class="pt-2 pb-2" for="exampleFormControlTextarea1 text">
+                                        <p class="text">Adresse email :</p>
+                                    </label>
                                     {{ contactform.from_email|addcss:'form-control' }}
                                 </div>
                                 <div class="col-12 form-group">
-                                    <label class="pt-2 pb-2" for="exampleFormControlTextarea1">Message :</label>
+                                    <label class="pt-2 pb-2" for="exampleFormControlTextarea1 text">
+                                        <p class="text">Message :</p>
+                                    </label>
                                     {{ contactform.message|addcss:'form-control' }}
                                 </div>
                                 <div class="form-actions mt-4">
-                                    <button class="btncontact w-25" type="submit">Send</button>
+                                    <button class="btncontact w-25 text" type="submit">Send</button>
                                 </div>
                             </div>
                         </form>
@@ -292,7 +297,7 @@
                             <div class="col-12 align-items-center d-flex">
                                 <img class="w-50  logo" src="{% static 'images/phone.png' %}"/></div>
                             <div class="col-12 text-center">
-                                <p class="mt-2">
+                                <p class="mt-2 text">
                                     06.65.10.98.10
                                 </p>
                             </div>
@@ -300,7 +305,7 @@
                                 <img class="w-50 pictocontact logo" src="{% static 'images/email.png' %}"/>
                             </div>
                             <div class="col-12 text-center">
-                                <p class="mt-2">
+                                <p class="mt-2 text">
                                     a.pillois@gmail.com
                                 </p>
                             </div>

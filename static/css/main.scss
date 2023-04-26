@@ -60,12 +60,14 @@ $four-color: #FDFFA6;
 .navbar {
   background-color: $primary-color !important;
   color: #D7FFC5;
+  font-family: "Operator Mono", "Fira Code", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  -webkit-box-shadow: 0px 21px 50px 50px #2E0C59;
+  box-shadow: 0px 21px 50px 50px #2E0C59;
 
   .logonav {
-    position: absolute;
-    top: 20px;
+    height: 100px;
+    margin:0px;
     transition: 3s ease-out;
-
   }
 
   .nav-item {
@@ -130,6 +132,9 @@ background-image: linear-gradient(0deg, #2e0c59 0, #a88ecb 16.67%, #cef1c1 33.33
     color: #BC90E4;
     font-size: 35px;
     line-height: 35px;
+  }
+  .text {
+    font-family: "Operator Mono", "Fira Code", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   }
 }
 
